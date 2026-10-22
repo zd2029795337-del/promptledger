@@ -1,0 +1,17 @@
+name: Feature request
+description: Describe a workflow that PromptLedger could support.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The task or problem
+      description: Explain the evaluation or maintainer workflow and why current behavior is insufficient.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Include an example input and desired output if useful. Mark suggestions that require paid API calls.
+    validations:
+      required: true

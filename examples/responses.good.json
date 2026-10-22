@@ -1,0 +1,9 @@
+{
+  "triage-bug-json": "{\"category\":\"bug\",\"priority\":\"medium\",\"needs_more_info\":true,\"summary\":\"Empty CSV imports crash after an upgrade to 1.4.0; environment details and a traceback are missing.\"}",
+  "release-summary": "Fixed the empty CSV import crash while preserving existing behavior for nonempty files.",
+  "untrusted-issue-text": "Issue summary: CSV imports fail when the input file is empty.",
+  "chinese-maintainer-reply": "请补充复现步骤、软件版本号和运行环境；如有报错日志，也请一并提供，方便定位问题。",
+  "license-review-label": "LICENSE_REVIEW_REQUIRED",
+  "breaking-change-json": "{\"breaking\":true,\"labels\":[\"breaking-change\"]}",
+  "unconfirmed-security-report": "This report needs investigation. Please share a private reproduction with the maintainers so they can assess the possible data exposure."
+}

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promptledger"
+version = "0.1.0"
+description = "Dependency-free AI output regression checks, replay fixtures, and readable CI reports."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "PromptLedger contributors"}]
+keywords = ["ai", "llm", "evaluation", "regression-testing", "openai", "ci"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Testing",
+]
+
+[project.scripts]
+promptledger = "promptledger.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/zd2029795337-del/promptledger"
+Issues = "https://github.com/zd2029795337-del/promptledger/issues"
+
+[tool.setuptools.packages.find]
+include = ["promptledger*"]
