@@ -73,7 +73,8 @@ def _run(args: argparse.Namespace) -> int:
     # Prevent replacing the baseline or source data with the generated reports.
     protected = [args.suite, args.responses, args.baseline]
     targets = [args.output.resolve() / filename for filename in ("report.json", "report.md", "report.html")]
-    if any(path and path.resolve() in targets for path in protected):
+    resolved_targets = [target.resolve() for target in targets]
+    if any(path and path.resolve() in resolved_targets for path in protected):
         raise ConfigError("Output files would overwrite an input or baseline; choose another --output.")
     args.output.mkdir(parents=True, exist_ok=True)
     for target in targets:
