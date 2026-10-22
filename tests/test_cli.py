@@ -214,7 +214,9 @@ class CLITests(unittest.TestCase):
         self.assertEqual(self.baseline.read_bytes(), original)
 
     def test_safe_provider_errors_become_failed_reports_with_no_retry(self):
-        with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test-not-a-real-key"}, clear=True), patch.object(
+        # HTTPS client initialization reads OS proxy/certificate settings. Keep
+        # the system environment while overriding only this test credential.
+        with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test-not-a-real-key"}), patch.object(
             OpenAIProvider, "generate", side_effect=ProviderError("Mocked provider unavailable.")
         ) as generate:
             code, out, err = self.invoke(
